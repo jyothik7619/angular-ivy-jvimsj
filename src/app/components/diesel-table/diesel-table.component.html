@@ -1,0 +1,17 @@
+
+
+<ag-grid-angular  style="height: 600px;padding: 1px;line-height:25px;width:1050px"
+                 class="ag-theme-alpine"
+                 [rowData]="RowData"
+                 [columnDefs]="ColumnDefs">
+</ag-grid-angular>
+
+<div class="col-md-12">
+  <div>
+    <span><a href='javascript:void(0);' (click)="handlePageChange('prev')"><< Prev</a></span>&nbsp;&nbsp;&nbsp;
+    <span><a href='javascript:void(0);' (click)="handlePageChange('next')">Next >></a></span>
+  </div>
+  <br />
+</div>
+
+

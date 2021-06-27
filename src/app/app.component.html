@@ -1,4 +1,61 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+
+<header class='container-fluid  bg-dark'>
+  <p>Header Text</p>
+  <p>Header Text</p>
+</header>
+
+<div class='container-fluid'>
+  <div class='row content'>
+
+
+
+    <!-- Left Panel -->
+    <div class='col-sm-2 sidenav bg-light'>
+      <app-left-panel [leftPanelState]='leftPanelState'></app-left-panel>
+    </div>
+
+
+
+    <!--Middle Panel-->
+    <div class='col-sm-10'>
+      <h3>USA Daily Diesel Spot Price</h3>
+      <br>
+      <div>
+
+        <nav class=''>
+          <div>
+            <a href='#'><span class='glyphicon glyphicon-refresh'></span></a>
+          </div>
+          <div class='nav nav-tabs'>
+            <li class='active'>
+              <a routerLink='information' class='nav-link' href='#'>Information</a>
+            </li>
+            <li class=''>
+              <a routerLink='diesel-table' class='nav-link' href='#'>Table</a>
+            </li>
+            <li class=''>
+              <a routerLink='analyze' class='nav-link' href='#'>Analyze</a>
+            </li>
+            <li class=''>
+              <a routerLink='export-data' class='nav-link' href='#'>Export</a>
+            </li>
+          </div>
+        </nav>
+
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>
+
+<header class='container-fluid  bg-dark'>
+  <p>Footer Text</p>
+  <p>Footer Text</p>
+</header>

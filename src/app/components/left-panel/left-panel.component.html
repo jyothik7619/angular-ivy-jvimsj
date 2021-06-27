@@ -1,0 +1,45 @@
+
+
+<div class="p-2 bg-dark font-weight-bold text-white">
+  <h5> {{ nhits }} Records</h5>
+</div>
+<hr />
+
+
+<div class="d-flex justify-content-between">
+  <div></div>
+  <a href='javascript:void(0);' (click)="clearFilter()" class='glyphicon glyphicon-remove btn-link'>Clear Filter</a>
+</div>
+<hr />
+
+
+<div *ngIf="sharedmasterData">
+  <div class="p-2 bg-dark font-weight-bold text-white">
+    <h5>Filters</h5>
+  </div>
+  <ul class='list-group' style="min-height:35px;max-height:250px; overflow:auto;">
+    <li class='list-group-item' *ngFor='let facet of facetGroups.facets.slice().reverse()'>
+      <a href='javascript:void(0);' (click)="getLeftPanelFilterData(facet.name)">
+        <div class="d-flex justify-content-between">
+          <div>{{ facet.name }}</div>
+          <div>{{ facet.count }}</div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <ul *ngIf="sharedmasterData.facet_groups" style="margin-left:80px" class='list-group'>
+    <li class='list-group-item' *ngFor='let facetMonth of (sharedmasterData.facet_groups[0].facets[0].facets || [])'>
+      <a href='javascript:void(0);' (click)="getLeftPanelFilterData(sharedmasterData.facet_groups[0].facets[0].name + '/'+facetMonth.name)">
+        <div class="d-flex justify-content-between">
+          <div>{{ getMonthName(facetMonth.name) }}</div>
+          <div>{{ facetMonth.count }}</div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+
+

@@ -1,0 +1,14 @@
+
+<br />
+
+<div class="row content d-flex justify-content-between">
+  <div class='col-sm-2'>
+    <select [(ngModel)]="selectedChartType" (ngModelChange)="onChartTypeChanged($event)">
+      <option *ngFor="let chartType of chartTypes" [ngValue]="chartType.id">{{chartType.name}}</option>
+    </select>
+  </div>
+</div>
+
+
+<br />
+<div [chart]="chart"></div>
